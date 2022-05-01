@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Parent-Child Communication" icon-name="custom:custom5">
+        <!-- Note how we are passing the properties to the child component -->
+        <div class="slds-m-around_medium">
+            <c-lwc-child-comp message="This is an Alert messge"></c-lwc-child-comp>
+            <c-lwc-child-comp message="This is an Info message" class-name="info"></c-lwc-child-comp>
+            <c-lwc-child-comp message="This is a Success message" class-name="success"></c-lwc-child-comp>
+            <c-lwc-child-comp message="This is a Warning message" class-name="warning"></c-lwc-child-comp>
+            <!-- 
+                class-name = className variable in the  child component.
+                Note how the className variable is converted into kebab case 
+            -->
+        </div>
+    </lightning-card>
+</template>

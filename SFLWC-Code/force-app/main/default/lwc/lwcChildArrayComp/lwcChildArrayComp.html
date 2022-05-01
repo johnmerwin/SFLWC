@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Looping through employee list" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+
+            <template for:each={employeeDetails} for:item="emp">
+                <p key={emp.Id}>{emp.firstName}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

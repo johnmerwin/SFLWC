@@ -1,0 +1,15 @@
+<aura:component >
+    <!-- 
+		parentAction will be used as a link to call
+		the parent methid from the child	
+	-->
+    <aura:attribute name="parentAction" type="Aura.Action"/>
+    <aura:attribute name="valueForParent" type="String" 
+                    default="Child value for parent"/>
+    <p>
+        This is a child component
+    </p>
+    
+    <ui:button label="Call Parent Method" press="{!v.parentAction}"/>
+    
+</aura:component>

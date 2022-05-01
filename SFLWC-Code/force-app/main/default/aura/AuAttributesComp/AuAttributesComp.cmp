@@ -1,0 +1,81 @@
+<aura:component>
+    <hr></hr>
+    <!-- Declare String variable -->
+	<aura:attribute Name = "myName"  Type = "String"></aura:attribute>
+    
+    <!-- Declare Account sObject -->
+    <aura:attribute Name="newAcct" Type="Account" 
+                    Default="{
+                             'sobjectType': 'Account', 
+                             'Name': 'Component Account'
+                             }">
+    </aura:attribute>
+    
+    <!-- Declare String Array -->
+    <aura:attribute Name = "arrNames"  Type = "String[]"
+                    Default="['John', 'Harry', 'Neeti']">
+    </aura:attribute>
+    
+    <!-- Declare a List variable -->
+    <aura:attribute Name = "lstNames"  Type = "List"
+                    Default="['Chris', 'Will', 'Bob']">
+    </aura:attribute>
+ 
+    <!-- Declare a Set variable -->
+    <aura:attribute Name = "setCities"  Type = "Set"
+                    Default="['New York', 'London', 'Paris']">
+    </aura:attribute>
+
+    
+    <!-- Declare Map variable -->
+    <aura:attribute Name="mapCourses" Type="Map" 
+                    Default="{
+                             a: 'Biology', 
+                             b: 'Chemistry',
+                             c: 'Anatomy'
+                             }">
+    </aura:attribute>
+    
+    
+    <!--
+		Declare the variables as shown above. Call the handler as 
+        shown below. The "name" attribute is the event. doInit is
+        the function that is called on this event.
+	-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    Hello, {!v.myName}
+   
+    <br/>
+    Account Name => {!v.newAcct.Name}
+    
+    <br/><br/>
+    Array value: {!v.arrNames[2]}
+    <br/>
+    Array size: {!v.arrNames.length}
+    
+    <br/><br/>
+    List value: {!v.lstNames[2]}
+    <br/>
+    List size: {!v.lstNames.length}
+    
+    <br/><br/>
+    Set value: {!v.setCities[1]}
+    <br/>
+    Set size: {!v.setCities.length}
+      
+    <br/><br/>
+    Map value: {!v.mapCourses.c}
+    <br/>
+    Map size: {!v.mapCourses.size}
+
+    
+    <!-- Accessing data from Apex class -->
+    <aura:attribute name="userData" type="AuWrapperDemo.WrapperTest"/>
+    
+    <br/><br/>
+    String value from wrapper class: {!v.userData.tstString}
+    <br/>
+    Integer value from wrapper class: {!v.userData.tstInteger}
+
+</aura:component>

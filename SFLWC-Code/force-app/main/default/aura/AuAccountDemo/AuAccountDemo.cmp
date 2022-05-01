@@ -1,0 +1,15 @@
+<aura:component controller="AuApAccountController"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" 
+                access="global">
+    
+    <aura:attribute name="lstAccts" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:select name="selectAccount" label="Select an Account">
+        <option value="null">None</option>
+        <aura:iteration items="{!v.lstAccts}" var ="acct">
+            <option value="{!acct.Id}">{!acct.Name}</option>
+        </aura:iteration>
+    </lightning:select>
+    
+</aura:component>

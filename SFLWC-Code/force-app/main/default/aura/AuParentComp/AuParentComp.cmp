@@ -1,0 +1,23 @@
+<aura:component >
+	<aura:attribute name="msgFromNotifier" type="String"/>
+    <aura:attribute name="lblFromNotifier" type="String"/>
+    <aura:attribute name="eventCount" type="Integer" default="0"/>
+    
+    <!--
+	"cmpEvent" is the identifier we have used in the child component
+	"c:AuCompEvent" is the event we have created 
+	-->
+    <aura:handler name="cmpEvent" 
+                  event="c:AuCompEvent" 
+                  action="{!c.handleComponentEvent}"/>
+    
+    <h1><b>Component Event Handler</b></h1>
+    
+    <p>Message from notifier => {!v.msgFromNotifier}</p>
+    <p>Label from notifier => {!v.lblFromNotifier}</p>
+    <p>Event Count => {!v.eventCount}</p>
+    
+    <br/><br/>
+    <!-- Include the child component here -->
+    <c:AuChildComp/>
+</aura:component>

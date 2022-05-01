@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Parent Component">
+        <div class="slds-m-around_medium">
+            {msgFromChild}
+            <c-lwc-child-sender onchildmessage={showMessageFromChild}></c-lwc-child-sender>
+        </div>
+
+    </lightning-card>
+</template>

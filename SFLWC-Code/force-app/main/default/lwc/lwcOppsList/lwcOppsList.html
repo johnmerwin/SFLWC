@@ -1,0 +1,9 @@
+<template>
+    <lightning-card if:true={getOpps.data} title={acctName} icon-name="standard:opportunity">
+        <div>
+            <lightning-datatable hide-checkbox-column="true" show-row-number-column="true" key-field="id"
+                data={getOpps.data} columns={columns}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

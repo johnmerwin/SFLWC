@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:attribute name="tstMessage01" type="String"/>
+    <aura:attribute name="tstMessage02" type="String"/>
+    <aura:handler   name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    Hello, {!v.tstMessage01}
+    <br/>
+    <lightning:button label="Button - 01" onclick="{!c.handleButton}" />
+    
+    <hr/>
+    Hello, {!v.tstMessage02}
+    <br/>
+    <lightning:button label="Button - 02" onclick="{!c.handleButton}" />
+</aura:component>

@@ -1,0 +1,22 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item padding="around-small" size="3">
+            <lightning-card title="Account Records" icon-name="standard:account">
+                <template for:each={accounts.data} for:item="acctObj" for:index="index">
+                    <p key={acctObj.Id} class="slds-p-horizontal_small">
+                        <a href="#" onclick={handleClick} data-name={acctObj.Name}
+                            data-accountid={acctObj.Id}>{acctObj.Name}</a>
+                    </p>
+                </template>
+            </lightning-card>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="9">
+            <!-- 
+                acct-id is the @api property 'acctId' declared in the 
+                lwcOppsList.js file. We need to convert it to kebab case
+            -->
+            <c-lwc-opps-list acct-id={accountIdFromParent} acct-name={accountName}></c-lwc-opps-list>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

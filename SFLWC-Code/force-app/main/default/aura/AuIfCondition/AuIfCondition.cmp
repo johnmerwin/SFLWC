@@ -1,0 +1,30 @@
+<aura:component >
+    <aura:attribute name="flag" type="boolean" default="false"/>
+    <aura:attribute name="flagHeader" type="boolean" default="false"/>
+    <aura:attribute name="notANumber" type="boolean" default="false"/>
+    
+    Enter a number: <ui:inputText aura:id="inpCmp"/>
+    <br/>
+    
+    <aura:if isTrue="{!v.flagHeader}">
+        <aura:if isTrue="{!v.flag}">
+            <div>
+                Number is greater than or equal to 50
+            </div>
+            <aura:set attribute="else">
+                Number is less than 50
+            </aura:set>
+        </aura:if>
+    </aura:if>
+    
+     
+    <aura:if isTrue="{!v.notANumber}">
+        <div>
+            Please enter a numeric value
+        </div>
+    </aura:if>
+    
+    <br/>    
+    <lightning:button label="Click Me" onclick="{!c.clickAction}"/>
+    
+</aura:component>

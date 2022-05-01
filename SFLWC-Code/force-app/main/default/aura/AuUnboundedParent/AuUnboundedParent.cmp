@@ -1,0 +1,16 @@
+<aura:component >
+    <aura:attribute name="parentVar" type="String" default="I am the parent"/>
+    
+    Parent Variable Value: <b>{!v.parentVar}</b>
+    <br/>
+    <lightning:button label="Update Parent Variable" onclick="{!c.updateParentVariable}"/>
+    <!-- 
+     We are passing the value in the parentVar to
+     the childVar variable in the child component
+    -->
+    <br/>
+    <hr/>
+    
+    <c:AuUnboundedChild childVar="{#v.parentVar}"/>
+    
+</aura:component>

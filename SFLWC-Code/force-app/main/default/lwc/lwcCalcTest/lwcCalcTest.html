@@ -1,0 +1,29 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon>
+            Calculator Example
+        </h3>
+        <div slot="footer">
+            <!--<lightning-badge label={result}></lightning-badge>-->
+
+            <!-- 
+                Note how we are referencing the child component here
+                The child component is actually lwcCalcResult, but LWC
+                changes the name to a kebab case: lwc-calc-result preceded 
+                with c-
+
+                "result" is the @api variable we have declared in the JS file
+                in the child component. It holds the value from the {result} variable
+                declared in lwcCalcTest.js file
+            -->
+            <c-lwc-calc-result result={result}></c-lwc-calc-result>
+        </div>
+        <p class="slds-p-horizontal_small">
+            <lightning-input value={firstNumber} name="num01" onchange={handleChange} label="Enter First Number">
+            </lightning-input>
+            <lightning-input value={secondNumber} name="num02" onchange={handleChange} label="Enter Second Number">
+            </lightning-input>
+        </p>
+    </lightning-card>
+</template>

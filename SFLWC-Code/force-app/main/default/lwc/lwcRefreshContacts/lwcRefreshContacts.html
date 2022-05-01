@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Editable Contacts List" icon-name="standard:contact">
+        <!--
+            We will be doing inline editing in this datatable. That is why
+            we have the handleSave and drafValues
+        -->
+        <div class="slds-m-around_medium">
+            <lightning-datatable key-field="Id" data={contact.data} columns={columns} onsave={handleSave}
+                draft-values={draftValues}></lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

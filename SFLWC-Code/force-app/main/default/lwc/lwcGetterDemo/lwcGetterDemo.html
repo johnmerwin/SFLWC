@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Getter Demo" icon-name="custom:custom3">
+        <div class="slds-m-around_medium">
+            <!-- 
+                We are going to use the getter method makeUpperCase here
+            -->
+            <h1 class="slds-text-heading_large">{makeUpperCase}</h1>
+        </div>
+        <div class="slds-m-around_medium">
+            <button onclick={handleClick}>ON</button>
+            <button onclick={handleClick}>OFF</button>
+        </div>
+        <div class="slds-m-around_medium">
+            <div class={boxClass}></div>
+        </div>
+    </lightning-card>
+</template>

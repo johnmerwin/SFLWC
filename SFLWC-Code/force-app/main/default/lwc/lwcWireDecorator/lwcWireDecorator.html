@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Retrieved Accounts" icon-name="custom:custom63">
+        <template for:each={data} for:item="account">
+            <p key={account.Id}>&nbsp;{account.Name}</p>
+        </template>
+    </lightning-card>
+</template>

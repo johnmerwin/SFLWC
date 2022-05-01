@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Create Account" icon-name="standard-record">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" onchange={handleChange} label="Name" class="slds-m-bottom_x-small">
+            </lightning-input>
+            <lightning-input type="phone" onchange={handleChange} label="Phone" class="slds-m-bottom_x-small">
+            </lightning-input>
+            <lightning-button variant="brand" label="Create Account" onclick={createAccount}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

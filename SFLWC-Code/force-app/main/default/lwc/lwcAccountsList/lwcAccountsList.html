@@ -1,0 +1,22 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item padding="around-small" size="3">
+            <lightning-card title="Account Records" icon-name="standard:account">
+                <template for:each={accounts.data} for:item="actObj" for:index="index">
+                    <p key={actObj.Id} class="slds-p-horizontal_small">
+                        <a href="#" onclick={handleClick} data-name={actObj.Name}
+                            data-accountid={actObj.Id}>{index}&nbsp;{actObj.Name}</a>
+                    </p>
+                </template>
+            </lightning-card>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="9">
+            <!-- 
+                acct-id is the @api property 'acctId' declared in the 
+                lwcContactsList.js file
+            -->
+            <c-lwc-contacts-list acct-id={accountIdFromParent} acct-name={accountName}></c-lwc-contacts-list>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

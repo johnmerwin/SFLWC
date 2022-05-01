@@ -1,0 +1,19 @@
+<aura:component controller="AuApContactController">
+	<aura:attribute name="books" type="string[]"
+                    default="['Fiction', 'Non-Fiction', 'Humor']"/>
+    
+    <aura:attribute name="contacts" type="list"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:iteration items="{!v.books}" var="item">
+        {!item}<br/>
+    </aura:iteration>
+    
+    <hr/>
+    
+    <aura:iteration items="{!v.contacts}" var="contact">
+        {!contact.LastName},{!contact.FirstName} <br/>
+    </aura:iteration>
+    
+    
+</aura:component>

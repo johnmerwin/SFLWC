@@ -1,0 +1,10 @@
+<template>
+    <lightning-card if:true={getContacts.data} title={acctName} icon-name="standard:contact">
+        <div class="slds-m-around_medium slds-text-title_caps"><b>Account Name => {acctName}</b></div>
+        <div>
+            <lightning-datatable hide-checkbox-column="true" show-row-number-column="true" key-field="id"
+                data={getContacts.data} columns={columns}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,16 @@
+<aura:component >
+    <h1>Parent calling child methods</h1>
+    <c:AuAccessChildFromParent aura:id="messages"/>
+    
+    <ui:button label="Show Confirm" press="{!c.handleShow}"/>
+    <ui:button label="Show Error" press="{!c.handleError}"/>
+    
+<!--    
+    <aura:component access="global">
+        <ui:inputText aura:id="name" label="Enter Name:" placeholder="Your Name" />
+        <ui:button aura:id="button" buttonTitle="Click to see what you put into the field" class="button" label="Click me" press="{!c.getInput}"/>
+        <ui:outputText aura:id="outName" value="" class="text"/>
+    </aura:component>
+-->
+    
+</aura:component>

@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="colorPickerText" type="string" />
+    
+    <lightning:card title="Change Text Color">
+        <aura:set attribute="actions">
+            <!--
+                colorchange is the custom event we have created in 
+                the LWC component. Here in the auro component, we 
+                use it by preceding it with a 'on' Hence it becomes
+                oncolorchange
+            -->
+            <c:lwcColorPicker oncolorchange="{!c.setTextColor}" />
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <div style="text-align:center; height: 30px; font-size: 20px;">
+                <b style="{!'color: ' + v.colorPickerText}">Sending color code from LWC to Aura</b>
+            </div>
+        </p>
+    </lightning:card>
+</aura:component>

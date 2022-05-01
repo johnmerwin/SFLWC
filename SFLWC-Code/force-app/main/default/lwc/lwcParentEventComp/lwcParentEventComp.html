@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Passing value to child on event">
+        <div class="slds-m-around_medium">
+            <label for="grade">Enter your grade score </label>
+            <input type="number" name="score" onkeyup={changeHandler} onmouseup={changeHandler} value={score}>
+        </div>
+        <div class="slds-m-around_medium">
+            <h1>Value passed to child from parent</h1>
+            <c-lwc-child-event-comp score={score}></c-lwc-child-event-comp>
+        </div>
+    </lightning-card>
+</template>

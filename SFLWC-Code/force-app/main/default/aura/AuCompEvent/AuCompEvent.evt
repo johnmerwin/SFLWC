@@ -1,0 +1,8 @@
+<aura:event type="COMPONENT" description="Event template">
+    <!-- 
+		We create an event here. This is the first step 
+		in the event cycle 
+	-->
+    <aura:attribute name="message" type="String"/>
+    <aura:attribute name="label" type="String"/>
+</aura:event>

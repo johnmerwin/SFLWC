@@ -1,0 +1,26 @@
+<aura:component >
+    <aura:attribute name="inpDate" type="date"/>
+    <aura:attribute name="dateValidationError" type="boolean"/>
+    
+    <div class="wide">
+        <lightning:input class="{v.dateValidationError ? 'slds-has-error' : ''"
+                         type="date"
+                         label="Enter Date"
+                         value="{!v.inpDate}"
+                         name="date"
+                         onchange="{!c.dateUpdate}"
+                         />
+        
+        <aura:if isTrue="{!v.dateValidationError}">
+            <div class="slds-text-color_error slds-p-left_x-small">
+                Date must be current date or in the future.
+            </div>
+        </aura:if>
+        
+        <lightning:button variant="brand"
+                          disabled="{!v.dateValidationError}"
+                          label="Submit" 
+                          onclick="{!c.submit }"
+                          />      
+    </div>
+</aura:component>
